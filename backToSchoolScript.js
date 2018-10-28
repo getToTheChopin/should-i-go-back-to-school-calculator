@@ -64,6 +64,13 @@ toggleAdvancedAssumptions();
 generateCustomURL();
 
 
+//Set promotion income values to the starting salary values
+document.getElementById('sc1Promotion1Income').value = incomeBaseline;
+document.getElementById('sc1Promotion2Income').value = incomeBaseline;
+document.getElementById('sc2Promotion1Income').value = incomeBackToSchool;
+document.getElementById('sc2Promotion2Income').value = incomeBackToSchool;
+
+
 function getURLValues () {
     let hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
     console.log(hashParams);
@@ -134,13 +141,6 @@ function initValues() {
         savingsRatio = schoolingCostPaidWithSavings / totalCostOfSchooling;
     }
     loanRatio = 1 - savingsRatio;
-
-    //Set promotion income values to the starting salary values
-    document.getElementById('sc1Promotion1Income').value = incomeBaseline;
-    document.getElementById('sc1Promotion2Income').value = incomeBaseline;
-    document.getElementById('sc2Promotion1Income').value = incomeBackToSchool;
-    document.getElementById('sc2Promotion2Income').value = incomeBackToSchool;
-   
 
     // Calc based on annuity formula
     studentLoanPayment = (studentLoanInterestRate * (totalCostOfSchooling - schoolingCostPaidWithSavings))/(1-Math.pow((1+studentLoanInterestRate),studentLoanPayback*-1)) / 12;
