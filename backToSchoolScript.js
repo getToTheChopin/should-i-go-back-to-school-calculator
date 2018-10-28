@@ -388,7 +388,7 @@ function generateNetWorthArrays() {
 
         if(differenceArray[i] >= 0 && differenceArray[i-1] < 0) {
             let breakevenYear = Math.round((i - 1 + (Math.abs(differenceArray[i-1]) / (differenceArray[i] - differenceArray[i-1])))*10)/10; 
-            document.getElementById("breakevenText").innerHTML = "Going back to school becomes the better financial decision after " + "<u>" + breakevenYear + " years </u>";
+            document.getElementById("breakevenText").innerHTML = "Going back to school becomes the better financial decision after " + breakevenYear + " years";
         }
     }
 }
