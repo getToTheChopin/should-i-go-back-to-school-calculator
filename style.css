@@ -1,0 +1,177 @@
+html, body {
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+}
+
+th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    vertical-align:middle;
+    width: 33%;
+    background-color: #dddddd;
+}
+
+table {
+    margin: auto;
+    width:90%;
+    max-width:600px;
+    margin-bottom:0.5%;
+}
+
+td {
+    border: 1px solid rgb(126, 126, 126);
+    padding: 5px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+#netWorthChartDiv {
+    padding:1%;
+    border: 1px solid black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: white;
+    position:relative;
+    height:50vh;
+    width:92vw;
+    max-width: 900px;
+    margin: auto;
+}
+
+.assumptionField {
+    width: 95%;
+    max-Width: 150px;
+    text-align:center;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    vertical-align:middle;
+    padding:3px;
+    border: 1px solid rgb(199, 199, 199);
+    moz-appearance: none;
+    web-kit-appearance: none;
+    appearance: none;
+}
+
+.sc1Assumption, .sc1Cell {
+    background-color: #e7feff;
+}
+
+.sc2Assumption, .sc2Cell {
+    background-color: #ffe3e1;
+}
+
+.sc1Header {
+    background-color: #008f95;
+    color: white;
+}
+
+.sc2Header {
+    background-color: #e24e42;
+    color: white;
+}
+
+.rowLabel {
+    width:50%;
+}
+
+.impliedCell {
+    background-color: #fffcd6;
+}
+
+#breakevenTextDiv {
+    display:block;
+    text-align:center;
+    margin:auto;
+    max-width:600px;
+    width:80%;
+    padding: 8px;
+    border: 2px solid #e24e42;
+}
+
+#breakevenDiv {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#breakevenText {
+    font-weight: bold;
+    padding-top:2%;
+    padding-bottom:2%;
+}
+
+.advancedAssumptionPara {
+    border-top: 2px dotted rgb(126, 126, 126);
+    padding-top: 8px;
+    width:90%;
+    max-width:600px;
+    text-align: center;
+    margin:auto;
+    font-style: oblique;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size:0.9em;
+
+}
+
+#advancedAssumptionToggleMarkerContainer{
+    display:none;
+}
+
+#customURLContainer, .advancedAssumptionButtonContainer {
+    display: inline-block;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#generateURLButton, #advancedAssumptionButton {
+    padding: 5px;
+    margin: 5px;
+    background-color: white;
+    color: #0099CC;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    vertical-align: bottom;
+}
+
+.customURLDiv {
+    align-items: center; 
+    vertical-align:middle;
+}
+
+#customURLOutput {
+    border: 1px solid rgb(199, 199, 199);
+    padding: 5px;
+    color: rgb(73, 73, 73);
+    width:200px;
+    display: inline-block;
+    margin: 5px;
+    font-style: oblique;
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: white;
+    overflow-wrap: break-word;
+    vertical-align: bottom;
+}
+
+.promotionHeader {
+    margin-top: 5px;
+    background-color: #dddddd;
+    font-weight:bold;
+}

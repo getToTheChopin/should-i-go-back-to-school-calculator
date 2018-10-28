@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Should I Go Back To School Calculator</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        
+        <div id="scenarioAssumptions">
+
+            <table class="assumptionTable">
+
+                <tr>
+                    <th>Income & Expense Assumptions</th>
+                    <th class="sc1Header">Baseline Scenario</th>
+                    <th class="sc2Header">Back to School Scenario (Post-Graduation)</th>
+                </tr>
+
+                <tr>
+                    <td>After-tax income (monthly $)</td>
+                    <td class="sc1Cell"><input type="number" id="incomeBaseline" class="assumptionField sc1Assumption" value="3000" min="0" max="1000000" step="100"></td>
+                    <td class="sc2Cell"><input type="number" id="incomeBackToSchool" class="assumptionField sc2Assumption" value="4000" min="0" max="1000000" step="100"></td>
+                </tr>
+
+                <tr>
+                    <td>Living expenses (monthly $)</td>
+                    <td class="sc1Cell"><input type="number" id="expensesBaseline" class="assumptionField sc1Assumption" value="2500" min="0" max="1000000" step="100"></td>
+                    <td class="sc2Cell"><input type="number" id="expensesBackToSchool" class="assumptionField sc2Assumption" value="2500" min="0" max="1000000" step="100"></td>
+                </tr>
+
+            </table>
+
+            <table class="assumptionTable">
+                <tr>
+                    <th colspan="2">Savings Assumptions</th>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Current amount of savings ($)</td>
+                    <td><input type="number" id="currentSavings" class="assumptionField" value="5000" min="0" max="1000000" step="1000"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Expected investment return (% per year, in real dollars)</td>
+                    <td><input type="number" id="investmentReturn" class="assumptionField" value="5.0" step="0.1"></td>
+                </tr>
+            </table>
+
+            <table class="assumptionTable">
+                <tr>
+                    <th colspan="2">Cost of School Assumptions</th>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel"># of years of schooling</td>
+                    <td><input type="number" id="yearsOfSchooling" class="assumptionField" value="2" min="0" max="30" step="1"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Tuition cost (annual $)</td>
+                    <td><input type="number" id="tuitionCost" class="assumptionField" value="15000" min="0" max="1000000" step="1000"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Living expenses during schooling (monthly $)</td>
+                    <td><input type="number" id="expensesDuringSchooling" class="assumptionField" value="2000" min="0" max="1000000" step="100"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel impliedCell"><i>Implied total cost of schooling:</i></td>
+                    <td class="impliedCell" id="impliedCostOfSchoolingCell"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Schooling cost paid with savings ($)</td>
+                    <td><input type="number" id="schoolingCostPaidWithSavings" class="assumptionField" value="0" min="0" max="1000000" step="1000"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel impliedCell"><i>Implied student loan balance ($)</i></td>
+                    <td class="impliedCell" id="impliedStudentLoanBalance"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel">Student loan interest rate (% per year)</td>
+                    <td><input type="number" id="studentLoanInterestRate" class="assumptionField" value="4.0" min="0.1" max="30" step="0.1"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel"># of years to pay back student loan</td>
+                    <td><input type="number" id="studentLoanPayback" class="assumptionField" value="10" min="1" max="100" step="1"></td>
+                </tr>
+
+                <tr>
+                    <td class="rowLabel impliedCell"><i>Implied loan payment (monthly $)</i></td>
+                    <td class="impliedCell" id="impliedLoanPaymentCell"></td>
+                </tr>
+
+            </table>            
+        </div>
+
+        <div id="advancedAssumptionTableContainer" class="hide">
+
+            <p class="advancedAssumptionPara">You can use the inputs below to generate a more realistic income forecast. Enter in up to 2 promotions for the baseline and/or back-to-school scenarios. <br><br> Any promotions where the "# of years" field is set to zero will be disregarded.<br><br>While these have been labelled as "promotions", you can also make the assumption that your income decreases over time.</p>
+
+            <table class="assumptionTable">
+
+                <tr>
+                    <th>Promotion Assumptions</th>
+                    <th class="sc1Header">Baseline Scenario</th>
+                    <th class="sc2Header">Back to School Scenario (Post-Graduation)</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="promotionHeader">Promotion #1</td>
+                </tr>
+
+                <tr>
+                    <td>Years from today / years from graduation</td>
+                    <td class="sc1Cell"><input type="number" id="sc1Promotion1Years" class="assumptionField sc1Assumption" value="0" min="0" max="30" step="1"></td>
+                    <td class="sc2Cell"><input type="number" id="sc2Promotion1Years" class="assumptionField sc2Assumption" value="0" min="0" max="30" step="1"></td>
+                </tr>
+                
+                <tr>
+                    <td>New total after-tax income (monthly $)</td>
+                    <td class="sc1Cell"><input type="number" id="sc1Promotion1Income" class="assumptionField sc1Assumption" value="0" min="0" max="1000000" step="100"></td>
+                    <td class="sc2Cell"><input type="number" id="sc2Promotion1Income" class="assumptionField sc2Assumption" value="0" min="0" max="1000000" step="100"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="promotionHeader">Promotion #2</td>
+                </tr>
+
+                <tr>
+                    <td>Years from today / years from graduation</td>
+                    <td class="sc1Cell"><input type="number" id="sc1Promotion2Years" class="assumptionField sc1Assumption" value="0" min="0" max="30" step="1"></td>
+                    <td class="sc2Cell"><input type="number" id="sc2Promotion2Years" class="assumptionField sc2Assumption" value="0" min="0" max="30" step="1"></td>
+                </tr>
+                
+                <tr>
+                    <td>New total after-tax income (monthly $)</td>
+                    <td class="sc1Cell"><input type="number" id="sc1Promotion2Income" class="assumptionField sc1Assumption" value="0" min="0" max="1000000" step="100"></td>
+                    <td class="sc2Cell"><input type="number" id="sc2Promotion2Income" class="assumptionField sc2Assumption" value="0" min="0" max="1000000" step="100"></td>
+                </tr>
+            </table>
+
+            
+        </div>
+
+        <div class="advancedAssumptionButtonContainer">
+            <button id="advancedAssumptionButton">+ Advanced options</button>
+        </div>
+        
+        <div id="netWorthChartDiv">
+            <canvas id="netWorthChart"></canvas>
+        </div>
+
+        <div id="breakevenDiv">
+            <div id="breakevenTextDiv">
+                    <span id="breakevenText">Going back to school doesn't become a better financial decision in the next 30 years...</span>            
+            </div>
+        </div>
+
+
+        <div id="customURLContainer">
+            <div class="customURLDiv">
+                <button id="generateURLButton">Share this scenario</button>
+            </div>
+
+            <div class="customURLDiv">
+                <div id="customURLOutput">&lt&lt Click button to get a shareable link for your custom scenario</div>
+            </div>
+        </div>
+
+        <div id="advancedAssumptionToggleMarkerContainer">
+            <input type="number" class="assumptionField" id="advancedAssumptionToggleMarker" value="0" min="0" max="1">
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="backToSchoolScript.js"> </script>
+    </body>
+
+</html>
