@@ -70,6 +70,9 @@ document.getElementById('sc1Promotion2Income').value = incomeBaseline;
 document.getElementById('sc2Promotion1Income').value = incomeBackToSchool;
 document.getElementById('sc2Promotion2Income').value = incomeBackToSchool;
 
+//run getURLValues again to reverse the actions above if a user is coming in through a custom link click
+getURLValues();
+
 
 function getURLValues () {
     let hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
